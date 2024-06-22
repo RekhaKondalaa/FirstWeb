@@ -1,32 +1,3 @@
-const enterMarksBtn = document.getElementById('enter-marks-btn');
-const marksForm = document.getElementById('marks-form');
-const sectionsList = document.getElementById('sections-list');
-const classesList = document.getElementById('classes-list');
-const marksTableContainer = document.getElementById('marks-table-container');
-const marksTableBody = document.getElementById('marks-table-body');
-
-enterMarksBtn.addEventListener('click', () => {
-    marksForm.style.display = 'block';
-});
-
-sectionsList.addEventListener('click', (e) => {
-    if (e.target.tagName === 'BUTTON') {
-        const section = e.target.dataset.section;
-        console.log(`Section selected: ${section}`);
-        // generate table rows for the selected section
-        generateTableRows(section);
-    }
-});
-
-classesList.addEventListener('click', (e) => {
-    if (e.target.tagName === 'BUTTON') {
-        const classSelected = e.target.dataset.class;
-        console.log(`Class selected: ${classSelected}`);
-        // generate table rows for the selected class
-        generateTableRows(classSelected);
-    }
-});
-
 const { useState, useEffect } = React;
 
 // Define schools data with student names
@@ -36,9 +7,8 @@ const schools = [
     { name: 'SCHOOL-C', students: generateStudents('C') },
     { name: 'SCHOOL-D', students: generateStudents('D') },
     { name: 'SCHOOL-E', students: generateStudents('E') },
-    { name: 'ALL', students: generateStudents('A','B','C','D','E') },
+    { name: 'ALL', students: [] } // Placeholder for combined data
 ];
-
 
 // Helper function to generate sample students
 function generateStudents(suffix) {
@@ -79,7 +49,9 @@ function StudentMarksEntry() {
 
     useEffect(() => {
         if (selectedSchool === 'ALL') {
-            setStudents(schools.flatMap(s => s.students));
+            // Combine students from all schools
+            const allStudents = schools.filter(s => s.name !== 'ALL').flatMap(s => s.students);
+            setStudents(allStudents);
         } else {
             const school = schools.find(s => s.name === selectedSchool);
             setStudents(school ? school.students : []);
@@ -208,3 +180,4 @@ function StudentMarksEntry() {
 
 // Render the component to the DOM
 ReactDOM.render(<StudentMarksEntry />, document.getElementById('root'));
+

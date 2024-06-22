@@ -1,12 +1,193 @@
+/* General Styles */
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #f4f4f4;
+}
+
+header {
+    background-color: #333;
+    color: #fff;
+    padding: 1em;
+    text-align: center;
+}
+
+/* Navigation Styles */
+nav ul {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    justify-content: space-between;
+}
+
+nav li {
+    margin-right: 20px;
+}
+
+nav a {
+    color: #fff;
+    text-decoration: none;
+}
+
+nav a:hover {
+    color: #ccc;
+}
+
+/* Button Styles */
 .button {
-	background-color: #4CAF50;
-	color: #fff;
-	padding: 10px 20px;
-	border: none;
-	border-radius: 5px;
-	cursor: pointer;
+    background-color: #4CAF50;
+    color: #fff;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    text-decoration: none;
+    display: inline-block;
+    margin: 5px;
 }
 
 .button:hover {
-	background-color: #3e8e41;
+    background-color: #3e8e41;
+}
+
+/* Marks Entry Form Styles */
+#marks-entry {
+    max-width: 800px;
+    margin: 40px auto;
+    padding: 20px;
+    background-color: #f9f9f9;
+    border: 1px solid #ddd;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+#enter-marks-btn {
+    background-color: #4CAF50;
+    color: #fff;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+#enter-marks-btn:hover {
+    background-color: #3e8e41;
+}
+
+#marks-form {
+    display: none;
+}
+
+#sections-list, #classes-list {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+}
+
+#sections-list li, #classes-list li {
+    margin-bottom: 10px;
+}
+
+#sections-list button, #classes-list button {
+    background-color: #4CAF50;
+    color: #fff;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+#sections-list button:hover, #classes-list button:hover {
+    background-color: #3e8e41;
+}
+
+/* Marks Table Styles */
+#marks-table-container {
+    overflow-x: auto;
+}
+
+#marks-table {
+    border-collapse: collapse;
+    width: 100%;
+    margin-top: 20px;
+    border: 1px solid #ddd;
+}
+
+#marks-table th, #marks-table td {
+    border: 1px solid #ddd;
+    padding: 10px;
+    text-align: left;
+}
+
+#marks-table th {
+    background-color: #f0f0f0;
+}
+
+.sub-columns {
+    display: flex;
+    justify-content: space-between;
+}
+
+.sub-columns input {
+    width: 100%;
+    box-sizing: border-box;
+    text-align: center;
+}
+
+.sub-columns input:not(:last-child) {
+    border-right: 1px solid #ccc;
+}
+
+/* Error Message Styles */
+.error {
+    color: red;
+    font-size: 12px;
+    margin-top: 5px;
+}
+
+/* Search Bar Styles */
+#search-bar {
+    width: 200px;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    margin-right: 20px;
+}
+
+#search-suggestions {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: none;
+    position: absolute;
+    background-color: white;
+    border: 1px solid #ccc;
+    width: 220px;
+}
+
+#search-suggestions li {
+    padding: 10px;
+    border-bottom: 1px solid #ccc;
+    cursor: pointer;
+}
+
+#search-suggestions li:hover {
+    background-color: #f0f0f0;
+}
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 20px;
+}
+
+th, td {
+    border: 1px solid #ccc;
+    padding: 10px;
+    text-align: center;
+}
+
+th {
+    background-color: #f0f0f0;
 }
